@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Service</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Employee Service</h1>
+      <p>Runs on port 8081 · database: employee_db</p>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel" id="panel">
+      <div class="panel-head">
+        <div>
+          <h2>👤 Employee Service</h2>
+          <small>http://localhost:8081 · employee_db</small>
+        </div>
+        <span class="badge" data-status>Checking...</span>
+      </div>
+      <form data-form novalidate>
+        <input type="hidden" name="id">
+        <div class="row">
+          <div class="field"><label>Name</label><input name="name" placeholder="Ravi Kumar"><div class="err"></div></div>
+          <div class="field"><label>Email</label><input name="email" type="email" placeholder="ravi@test.com"><div class="err"></div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Designation</label><input name="designation" placeholder="Java Developer"><div class="err"></div></div>
+          <div class="field"><label>Department ID</label><input name="departmentId" type="number" min="1" placeholder="1"><div class="err"></div></div>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn primary" data-submit>Add Employee</button>
+          <button type="button" class="btn ghost" data-cancel hidden>Cancel</button>
+        </div>
+      </form>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Designation</th><th>Dept ID</th><th></th></tr></thead>
+          <tbody data-body></tbody>
+        </table>
+        <p class="empty" data-empty hidden>No employees yet. Add one above.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
